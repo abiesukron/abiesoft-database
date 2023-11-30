@@ -198,3 +198,17 @@ $create = new users();
 $create->buattabel();
 
 ```
+
+# Mengimport tabel
+Untuk mengimport tabel gunakan perintah berikut :
+```
+php abiesoft db:import
+```
+setelah kita jalankan akan mendapatkan informasi bahwa tabel sudah diimport seperti ini :
+```
+-- Tabel users sudah diimport. 
+
+Sukses! 
+Total: 1 tabel 
+```
+Ketika kita menjalankan perintah ini, sistem akan membuatkan secara otomatis tabel <code>migrasi</code> sebagai tempat untuk menyimpan catatan tabel mana saja yang sudah diimport dan tabel mana yang belum diimport. jadi ketika kita menjalankan tabel import ini berulang tidak akan menimpa tabel yang sudah pernah kita import dan hanya akan mengimport tabel yang belum diimport saja.
