@@ -6,3 +6,9 @@ Silahkan cloning dulu source codenya bisa download, atau cloning dengan cara ber
 ```
 git clone https://github.com/abiesukron/abiesoft-database 
 ```
+
+# Konfigurasi
+Buat file <code>.env</code> menggunakan <code>.env_sample</code> lalu atur konfigurasinya sesuai dengan database yang kita gunakan. Kemudian buka <code>Command Prompt</code> atau <code>Window PowerShell</code> untuk menjalankan code berikut :
+```
+php abiesfot version
+```
