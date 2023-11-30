@@ -229,7 +229,43 @@ Jika data berhasil dibackup akan menampilkan informais seperti ini :
 ```
 -- Tabel users sudah dibackup. 
 
- Backup Selesai! 
+Backup Selesai! 
 Total: 1 tabel 
 Lokasi: backup/abiesoft_01_12_2023_01 
+```
+Perintah backup ini hanya membackup tabel yang sudah berisi data.
+
+# Merestore Data
+Merestore atau memulihkan data, gunakan perintah berikut :
+```
+php abiesoft db:restore
+```
+lalu akan tampil data-data yang sudah pernah kita backup, pilih angkanya lalu enter seperti contoh berikut :
+```
+Silahkan pilih data yang akan direstore?
+[1] abiesoft_01_12_2023_01
+Tekan [Enter] untuk membatalkan
+Angka pilihan anda :
+```
+setelah berhasil direstore akan ada informasi seperti ini :
+```
+-- Tabel users sudah direstore. 
+
+Sukses! 
+Total: 1 tabel dipulihkan
+```
+
+# Mereset Ulang Data
+Mereset ulang data, gunakan perintah berikut :
+```
+php abiesoft db:refresh
+```
+perintah ini akan mengembalikan data seperti data yang ada di folder schema ketika pertama kali di import
+setelah berhasil informasinya akan seperti ini :
+```
+-- Tabel users sudah dihapus. 
+-- Tabel users sudah diimport. 
+
+Sukses! 
+Total: 1 tabel 
 ```

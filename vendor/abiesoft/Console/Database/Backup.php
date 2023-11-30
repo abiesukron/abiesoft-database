@@ -181,6 +181,20 @@ class Backup
                     $isi = "        $" . "" . "schema->enum(nama:'" . $namakolom . "', data:[".$kolomtype."]);\n";
                     fwrite($file, $isi);
                 }
+
+                if ($k->DATA_TYPE == "tinyint" || $k->DATA_TYPE == "boolean") {
+                    $namakolom = $k->COLUMN_NAME;
+                    $default = $k->COLUMN_DEFAULT;
+                    if ($default != "") {
+                        $default = ", default: " . $default;
+                    } else {
+                        $default = "";
+                    }
+                    $kolomtype = str_replace(")","",str_replace("enum(","",$k->COLUMN_TYPE));
+                    $isi = "        $" . "" . "schema->boolean(nama:'" . $namakolom . "'$default);\n";
+                    fwrite($file, $isi);
+                }
+
             }
         }
 
@@ -207,8 +221,13 @@ class Backup
             fwrite($file, $isi);
             foreach ($v as $vk => $vv) {
                 if ($vv != "") {
-                    $isi = "            '" . $vk . "' => '" . str_replace("'", "\'", $vv) . "',\n";
-                    fwrite($file, $isi);
+                    if(is_string($vv)){
+                        $isi = "            '" . $vk . "' => '" . str_replace("'", "\'", $vv) . "',\n";
+                        fwrite($file, $isi);
+                    }else{
+                        $isi = "            '" . $vk . "' => " . str_replace("'", "\'", $vv) . ",\n";
+                        fwrite($file, $isi);
+                    }
                 }
             }
             $isi = "        ]);\n";
