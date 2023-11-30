@@ -24,7 +24,7 @@ Hasilnya sebagai berikut :
 Sukses! 
 Lokasi: schema/users.php
 ```
-dan ini adalah ini default schema yang sudah dibuat :
+dan ini adalah isi default schema yang sudah dibuat :
 ```
 <?php 
 
@@ -62,3 +62,13 @@ $create->buattabel();
 
 ```
 
+# Membuat Kolom Di Schema Tabel
+Sebelum kita membuat kolom untuk tabel users, berikut adalah hal-hal yang perlu diperhatikan untuk menulis kolom di schema tabel.
+| Nama | Keterangan | Opsi |
+| --- | --- | --- |
+| `teks` | Teks simpel atau string | nama, panjang, default, null, unique |
+| `paragrap` | Paragrap atau teks panjang | nama, null |
+| `tanggal` | Tanggal berformat DATETIME | nama, null |
+| `angka` | Angka | nama, panjang, default, null, unique |
+| `enum` | Pilihan | nama, data, default |
+| `boolean` | Boolean | nama, default |
