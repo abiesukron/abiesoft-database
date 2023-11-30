@@ -212,3 +212,24 @@ Sukses!
 Total: 1 tabel 
 ```
 Ketika kita menjalankan perintah ini, sistem akan membuatkan secara otomatis tabel <code>migrasi</code> sebagai tempat untuk menyimpan catatan tabel mana saja yang sudah diimport dan tabel mana yang belum diimport. jadi ketika kita menjalankan tabel import ini berulang tidak akan menimpa tabel yang sudah pernah kita import dan hanya akan mengimport tabel yang belum diimport saja.
+
+# Membackup data
+Untuk membackup data gunakan perintah berikut :
+```
+php abiesoft db:backup
+```
+lalu buat nama backup atau langsung enter lagi untuk nama backup secara default
+```
+Nama backup datanya apa?
+Ketik nama backup (nama tidak menggunakan spasi), atau
+Tekan [Enter] untuk melanjutkan dengan nama default
+Nama backup : 
+```
+Jika data berhasil dibackup akan menampilkan informais seperti ini :
+```
+-- Tabel users sudah dibackup. 
+
+ Backup Selesai! 
+Total: 1 tabel 
+Lokasi: backup/abiesoft_01_12_2023_01 
+```

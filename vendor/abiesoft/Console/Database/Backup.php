@@ -151,7 +151,7 @@ class Backup
                     if($k->IS_NULLABLE != "YES"){
                         $null = ", null:false";
                     }
-                    $isi = "        $" . "" . "schema->number(nama:'" . $namakolom . "'$default$null);\n";
+                    $isi = "        $" . "" . "schema->angka(nama:'" . $namakolom . "'$default$null);\n";
                     fwrite($file, $isi);
                 }
 
